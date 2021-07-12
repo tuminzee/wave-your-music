@@ -1,6 +1,9 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import WaveSurfer from 'wavesurfer.js';
 import * as copy from 'copy-to-clipboard';
+import * as htmlToImage from 'html-to-image';
+// import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-root',
@@ -55,6 +58,17 @@ export class AppComponent {
   copyUrl(){
     copy('https://ia800508.us.archive.org/15/items/LoveThemeFromTheGodfather/02LoveThemeFromTheGodfather.mp3');
     alert('copied');
+  }
+
+  downloadWave(){
+    //   htmlToImage.toCanvas(document.getElementById('wall'))
+    // .then(function (canvas) {
+    //   document.body.appendChild(canvas);
+    // });
+      htmlToImage.toBlob(document.getElementById('wall'))
+      .then(function (blob) {
+        saveAs(blob, 'wave-your-music.png');
+      });
   }
 
 }

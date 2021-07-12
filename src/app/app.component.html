@@ -1,14 +1,16 @@
-<div class="container">
+<div class="container" id="wall">
 
 
     <button (click)="copyUrl()">copy sample url</button>
     <input type="text" [(ngModel)]="url">
-
-
+    <button *ngIf="wave" class="play-pause-button" (click)="playPause()">Play/Pause</button>
     <button (click)="onPreviewPressed(url)">Click me</button>
+    <button (click)="downloadWave()">Download PNG</button>
+
+
     <p>{{url}} </p>
 
-    <button *ngIf="wave" class="play-pause-button" (click)="playPause()">Play/Pause</button>
+
     <div id="waveform"></div>
 
 </div>
