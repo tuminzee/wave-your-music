@@ -1,0 +1,14 @@
+<div class="container">
+
+
+    <button (click)="copyUrl()">copy sample url</button>
+    <input type="text" [(ngModel)]="url">
+
+
+    <button (click)="onPreviewPressed(url)">Click me</button>
+    <p>{{url}} </p>
+
+    <button *ngIf="wave" class="play-pause-button" (click)="playPause()">Play/Pause</button>
+    <div id="waveform"></div>
+
+</div>

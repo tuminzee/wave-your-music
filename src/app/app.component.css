@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+}
+
+#waveform {
+    display: block;
+    position: relative;
+    height: 10vh;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
